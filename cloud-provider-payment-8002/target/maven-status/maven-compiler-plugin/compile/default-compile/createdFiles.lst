@@ -1,0 +1,5 @@
+com\test\springcloud\controller\PaymentController.class
+com\test\springcloud\PaymentMain8002.class
+com\test\springcloud\service\Impl\PaymentServiceImpl.class
+com\test\springcloud\dao\PaymentDao.class
+com\test\springcloud\service\PaymentSerivce.class

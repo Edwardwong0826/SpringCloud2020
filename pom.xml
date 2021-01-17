@@ -10,20 +10,12 @@
     <modules>
         <module>cloud-provider-payment-8001</module>
         <module>cloud-consumer-order80</module>
-        <module>cloud-api-commons</module>
-        <module>cloud-api-commons</module>
-        <module>cloud-api-commons</module>
-        <module>com.test.springcloud</module>
-        <module>cloud-api-commons</module>
-        <module>cloud-api-commons</module>
         <module>cloud-api-common</module>
+        <module>cloud-eureka-server7001</module>
+        <module>cloud-eureka-server7002</module>
+        <module>cloud-provider-payment-8002</module>
     </modules>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-        </dependency>
-    </dependencies>
+
 
     <packaging>pom</packaging>
 

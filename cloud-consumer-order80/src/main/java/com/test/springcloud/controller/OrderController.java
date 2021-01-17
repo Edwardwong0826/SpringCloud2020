@@ -14,13 +14,13 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 public class OrderController {
 
-    public static final String PAYMENT_URL = "http://localhost:8001";
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Autowired
-    private RestTemplate restTemplate;
+    private RestTemplate restTemplate = new RestTemplate();
 
     @GetMapping("/consumer/payment/create")
-    public CommonResult<Payment> create(Payment payment)
+    public CommonResult create(Payment payment)
     {
         // rest template will wrap the payment into JSON body and sent to provider payment 8001 url,
         // so when in payment 8001 need to add @RequestBody
@@ -28,7 +28,7 @@ public class OrderController {
     }
 
     @GetMapping("/consumer/payment/get/{id}")
-    public CommonResult<Payment> getPayment(@PathVariable("id") Long id)
+    public CommonResult getPayment(@PathVariable("id") Long id)
     {
         return restTemplate.getForObject(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);
     }
