@@ -18,6 +18,7 @@ eureka:
       defaultZone: http://eureka7002.com:7002/eureka/
 
   server:
+    # 自我保护机制，是为了防止client有网络问题，卡，阻塞，拥挤，都是客户端是健康的，不立刻移除，给时间重连
     # close self protection if false, remove service asap
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 2000

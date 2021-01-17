@@ -1,0 +1,15 @@
+server:
+  port: 8006
+
+
+spring:
+  application:
+    name: consul-consumer-order
+  cloud:
+    consul: # 如果要用consul当注册中心， 需要下载, 然后去cmd运行consul agent -dev, 可以直接去localhost:8500看
+      host: localhost
+      port: 8500
+      discovery:
+        #hostname: 127.0.0.1
+        service-name: ${spring.application.name}
+
