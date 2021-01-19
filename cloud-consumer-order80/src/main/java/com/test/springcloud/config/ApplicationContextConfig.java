@@ -10,7 +10,7 @@ public class ApplicationContextConfig
 {
 
      @Bean
-     @LoadBalanced // if got from cluster eureka service, we need to add this @LoadBalanced, else will error don't know get from which server port
+     //@LoadBalanced // if got from cluster eureka service, we need to add this @LoadBalanced, else will error don't know get from which server port
      public RestTemplate getRestRTemplate()
      {
          return new RestTemplate();
