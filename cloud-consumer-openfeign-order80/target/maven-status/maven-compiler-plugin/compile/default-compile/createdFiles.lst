@@ -1,0 +1,3 @@
+com\test\springcloud\controller\OrderFeignController.class
+com\test\springcloud\service\PaymentFeignService.class
+com\test\springcloud\OrderFeignMain80.class
