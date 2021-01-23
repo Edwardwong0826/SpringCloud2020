@@ -1,0 +1,26 @@
+server:
+  port: 3355
+
+spring:
+  application:
+    name: config-client
+  cloud:
+    #Config客户端配置
+    config:
+      label: master #分支名称
+      name: config #配置文件名称
+      profile: dev #读取后缀名称 上诉3个综合就是 master branch上 config-dev.yml, spring config会把name和profile中间自动加-
+      uri: http://localhost:3344
+
+#需要 curl -x POST "http://localhost:3355/actuator/refresh", 3355才可以从3344拿到value并刷新
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+
+#暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
