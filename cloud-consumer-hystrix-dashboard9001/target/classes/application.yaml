@@ -1,0 +1,8 @@
+server:
+  port: 9001
+
+eureka:
+  client:
+    # Eureka服务注册中心会将自己作为客户端来尝试注册它自己，必須禁止
+    register-with-eureka: false
+    fetch-registry: false
