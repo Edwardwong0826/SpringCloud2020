@@ -24,6 +24,7 @@
         <module name="cloud-consumer-order80" />
         <module name="cloud-provider-payment-8006" />
         <module name="cloud-config-client-3355" />
+        <module name="cloud-config-client-3366" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

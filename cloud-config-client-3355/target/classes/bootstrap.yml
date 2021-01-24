@@ -11,8 +11,13 @@ spring:
       name: config #配置文件名称
       profile: dev #读取后缀名称 上诉3个综合就是 master branch上 config-dev.yml, spring config会把name和profile中间自动加-
       uri: http://localhost:3344
+  rabbitmq: #rabbit相关配置 15672是web管理界面的端口，5672是MQ访问的端口
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
-#需要 curl -x POST "http://localhost:3355/actuator/refresh", 3355才可以从3344拿到value并刷新
+#加了@RefreshScope在Controller类后， 需要 curl -x POST "http://localhost:3355/actuator/refresh", 3355才可以从3344拿到value并刷新
 eureka:
   client:
     service-url:

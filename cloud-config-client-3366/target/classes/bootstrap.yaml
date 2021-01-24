@@ -1,5 +1,5 @@
 server:
-  port: 3355
+  port: 3366
 
 spring:
   application:
@@ -18,7 +18,6 @@ spring:
     password: guest
 
 #加了@RefreshScope在Controller类后， 需要 curl -x POST "http://localhost:3355/actuator/refresh", 3355才可以从3344拿到value并刷新
-#给特定的client 刷新 curl -x POST "http://localhost:3355/actuator/refresh/{destination}",
 eureka:
   client:
     service-url:
