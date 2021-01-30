@@ -22,7 +22,7 @@ spring:
           content-type: application/json #设置消息类型，本次为json，本文要设置为“text/plain”
           binder: defaultRabbit #设置要绑定的消息服务的具体设置
           #group: rabbitGroupA
-          #不同组会有重复消费问题， 不同组才会有竞争关系，不会重复消费, 而且如果没有group, 如果这个服务下线了，8001发送消息，在重启后不能从rabbitMQ接收消息
+          #不同组会有重复消费问题， 同组才会有竞争关系，不会重复消费, 而且如果没有group, 如果这个服务下线了，8001发送消息，在重启后不能从rabbitMQ接收消息
           #这是持久化问题，所以group属性可以解决以上两个问题
 
 eureka:
