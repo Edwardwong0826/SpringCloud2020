@@ -1,0 +1,27 @@
+version: '3'
+services:
+  eureka-server1:
+    image: spring-eureka-discovery:1.0
+    container_name: cloud_eureka_1
+    hostname: eureka7001.com
+    ports:
+      - "7001:7001"
+    environment:
+      - spring.profiles.active=peer1
+    networks:
+      - cloudnetwork
+
+  eureka-server2:
+    image: spring-eureka-discovery:1.0
+    container_name: cloud_eureka_2
+    hostname: eureka7002.com
+    ports:
+      - "7002:7002"
+    environment:
+      - spring.profiles.active=peer2
+    networks:
+      - cloudnetwork
+
+networks:
+  cloudnetwork:
+    driver: bridge

@@ -1,3 +1,5 @@
+spring:
+  profiles: peer1
 server:
   port: 7001
 
@@ -22,3 +24,31 @@ eureka:
     # close self protection if false, remove service asap
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 2000
+---
+spring:
+  profiles: peer2
+server:
+  port: 7002
+
+eureka:
+  instance:
+    hostname: eureka7002.com #eureka服务端的实例名称
+  client:
+    # false表示不向注册中心注册自己
+    register-with-eureka: false
+    # false表示自己端就是注册中心,我的职责就是维护服务实例,并不需要检索服务
+    fetch-registry: false
+    service-url:
+      # 设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+      # 单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      # 相互注册
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
+
+  server:
+    # 自我保护机制，是为了防止client有网络问题，卡，阻塞，拥挤，都是客户端是健康的，不立刻移除，给时间重连
+    # close self protection if false, remove service asap
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000
+
