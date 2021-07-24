@@ -22,6 +22,24 @@ services:
     networks:
       - cloudnetwork
 
+  cloud-provider1:
+    image: cloud-provider:1.0
+    container_name: cloud_provider_1
+    hostname: cloud-payment-service
+    ports:
+      - "8001:8001"
+    networks:
+      - cloudnetwork
+      
+  cloud-consumer-openfeign1:
+    image: cloud-consumer-openfeign:1.0
+    container_name: cloud_consumer_openfeign_1
+    hostname: cloud-consumer-openfeign
+    ports:
+      - "80:80"
+    networks:
+      - cloudnetwork
+
 networks:
   cloudnetwork:
     driver: bridge
