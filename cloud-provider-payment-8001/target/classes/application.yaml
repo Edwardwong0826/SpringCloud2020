@@ -8,8 +8,17 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/springdemo?useTimezone=true&serverTimezone=UTC
+    # when using docker-compose create the provider service, the sql container that want connect need to be same network with this provider,
+    # remember to use the container port instead of host port, because the sql and provider service in the same network, they can ping each other directly
+    #url: jdbc:mysql://sql_container3:3306/springdemo
     username: root
     password: 61376554
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    # To auto generate and created the table into the database without we created
+    generate-ddl: true
+    hibernate:
+      ddl-auto=create:
 
 eureka:
   client:

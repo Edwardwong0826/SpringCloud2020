@@ -18,6 +18,7 @@ public class MyLogGatewayFilter implements GlobalFilter, Ordered
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         log.info("************come in MyLogGatewayFilter: "+new Date());
+        // here Global filter force uri must have  uname, in order the chain to proceed
         String uname = exchange.getRequest().getQueryParams().getFirst("uname");
         if(uname ==null)
         {

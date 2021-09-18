@@ -1,6 +1,10 @@
 server:
   port: 80
 
+spring:
+  application:
+    name: cloud-consumer-openfeign
+
 eureka:
   client:
     #表示是否将自己注册进EurekaServer默认为true
@@ -14,7 +18,7 @@ eureka:
       #defaultZone: http://localhost:7001/eureka/
 
 
-#设置feign客户端超时时间（OpenFeign默认支持ribbon）
+#设置feign客户端超时时间（OpenFeign默认支持ribbon）, ribbon 默认如果超过一秒会直接报错， 比如网络拥挤，超时，如果要延长等待时间可以设置
 ribbon:
   #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的实际
   ReadTimeout: 5000

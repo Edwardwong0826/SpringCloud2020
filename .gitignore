@@ -1,0 +1,6 @@
+
+*.jar
+cloud-api-common/target/maven-archiver/pom.properties
+*.lst
+*.properties
+*.properties

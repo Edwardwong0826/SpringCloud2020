@@ -12,6 +12,7 @@ spring:
     password: 61376554
   cloud:
     zookeeper:
+      # use docker pull zookeeper, and then docker --name cloud-zookeeper -p 2181:2181 -d zookeeper, then we can directly access zookeeper on docker
       connect-string: localhost:2181
 
 mybatis:

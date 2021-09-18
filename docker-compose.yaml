@@ -40,6 +40,15 @@ services:
     networks:
       - cloudnetwork
 
+  cloud-gateway:
+    image: spring-gateway:1.0
+    container_name: cloud_gateway_1
+    hostname: cloud-gateway
+    ports:
+      - "9527:9527"
+    networks:
+      - cloudnetwork
+
 networks:
   cloudnetwork:
     driver: bridge
